@@ -5,9 +5,9 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
 
-    <include file="classpath:db/changelog/migrations/001-create-accounts.xml"/>
-    <include file="classpath:db/changelog/migrations/002-create-transactions.xml"/>
-    <include file="classpath:db/changelog/migrations/003-create-indexes.xml"/>
-    <include file="classpath:db/changelog/migrations/004-seed-data.xml"/>
+    <include file="classpath:db/changelog/migrations/001-create-accounts.sql"/>
+    <include file="classpath:db/changelog/migrations/002-create-transactions.sql"/>
+    <include file="classpath:db/changelog/migrations/003-create-indexes.sql"/>
+    <include file="classpath:db/changelog/migrations/004-seed-data.sql"/>
 
 </databaseChangeLog>
