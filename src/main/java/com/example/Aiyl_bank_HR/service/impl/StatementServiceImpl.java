@@ -26,6 +26,7 @@ public class StatementServiceImpl implements StatementService {
     private final TransactionRepository transactionRepository;
 
     @Transactional(readOnly = true)
+    @Override
     public Page<StatementDto.StatementEntryResponse> getStatement(
             String accountNumber,
             LocalDateTime from,

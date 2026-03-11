@@ -28,6 +28,7 @@ public class TransactionServiceImpl implements TransactionService {
     private final TransactionRepository transactionRepository;
 
     @Transactional
+    @Override
     public TransactionDto.TransferResponse transfer(TransactionDto.TransferRequest request) {
         log.info("Initiating transfer: {} -> {}, amount: {}",
                 request.sourceAccountNumber(), request.targetAccountNumber(), request.amount());
