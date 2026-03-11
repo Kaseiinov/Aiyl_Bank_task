@@ -2,6 +2,11 @@ spring:
   application:
     name: Aiyl-bank-HR
 
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:aiylbank}
+    username: ${DB_USER:aiyl}
+    password: ${DB_PASSWORD:aiyl123}
+
   jpa:
     hibernate:
       ddl-auto: validate

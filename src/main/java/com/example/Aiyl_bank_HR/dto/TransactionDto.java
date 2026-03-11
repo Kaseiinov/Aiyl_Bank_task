@@ -1,12 +1,32 @@
 package com.example.Aiyl_bank_HR.dto;
 
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+import java.math.BigDecimal;
+
 public class TransactionDto {
 
-    public record TransactionRequest(
+    public record TransferRequest(
+            @NotBlank(message = "Source account number is required")
+            String sourceAccountNumber,
 
-    ){}
+            @NotBlank(message = "Target account number is required")
+            String targetAccountNumber,
 
-    public record TransactionResponse(
+            @NotNull(message = "Amount is required")
+            @DecimalMin(value = "0.01", message = "Amount must be greater than 0")
+            BigDecimal amount
+    ) {}
 
-    ){}
+    public record TransferResponse(
+            Long transactionId,
+            String sourceAccountNumber,
+            String targetAccountNumber,
+            BigDecimal amount,
+            String status,
+            String message
+    ) {}
+
 }
